@@ -8,6 +8,7 @@ public class Main {
         numberCategory(12);
         System.out.println(isNegative(-7));
         hiNameMethod("Max");
+        isIntercalaryYear(2400);
 
 
     }
@@ -51,4 +52,15 @@ public class Main {
     static void hiNameMethod(String name){
         System.out.println("Привет, "+ name + "!");
     }
+    //8. * Написать метод, который определяет является ли год високосным, и выводит сообщение в консоль.
+    // Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
+    static boolean isIntercalaryYear(int year){
+        if (year%4 == 0 && year%400 == 0 || year%4 ==0 && year%100!=0){
+            System.out.println("The year "+ year + " is intercalary year.");
+            return true;
+        }
+        System.out.println("The year "+ year + " is not intercalary year.");
+        return false;
+    }
+
 }
