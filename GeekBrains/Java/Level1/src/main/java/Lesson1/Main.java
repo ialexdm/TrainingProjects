@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(arithmeticMethod1(7, 2, 7, 3));
         System.out.println(isSumValueFrom10to20(3,14));
+        numberCategory(12);
 
 
     }
@@ -29,6 +30,16 @@ public class Main {
         int minSumValue = 10;
         int maxSumValue = 20;
         return ((a+b)<=maxSumValue && (a+b)<=minSumValue);
+    }
+    //5. Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль
+    // положительное ли число передали, или отрицательное; Замечание: ноль считаем положительным числом.
+    static void numberCategory(int a){
+        if (a<0)
+            {
+                System.out.println("Number " + a + " is negative");}
+        else {
+            System.out.println("Number " + a + " is positive");
+        }
     }
 
 }
