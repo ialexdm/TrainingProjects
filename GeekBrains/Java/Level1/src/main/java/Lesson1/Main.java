@@ -7,6 +7,7 @@ public class Main {
         System.out.println(isSumValueFrom10to20(3,14));
         numberCategory(12);
         System.out.println(isNegative(-7));
+        hiNameMethod("Max");
 
 
     }
@@ -45,5 +46,9 @@ public class Main {
     //6. Написать метод, которому в качестве параметра передается целое число, метод должен вернуть true, если число отрицательное;
     static boolean isNegative(int a){
         return a<0;
+    }
+    //7. Написать метод, которому в качестве параметра передается строка, обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
+    static void hiNameMethod(String name){
+        System.out.println("Привет, "+ name + "!");
     }
 }
