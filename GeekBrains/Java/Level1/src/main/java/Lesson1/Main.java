@@ -6,6 +6,7 @@ public class Main {
         System.out.println(arithmeticMethod1(7, 2, 7, 3));
         System.out.println(isSumValueFrom10to20(3,14));
         numberCategory(12);
+        System.out.println(isNegative(-7));
 
 
     }
@@ -41,5 +42,8 @@ public class Main {
             System.out.println("Number " + a + " is positive");
         }
     }
-
+    //6. Написать метод, которому в качестве параметра передается целое число, метод должен вернуть true, если число отрицательное;
+    static boolean isNegative(int a){
+        return a<0;
+    }
 }
