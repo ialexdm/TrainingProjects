@@ -17,9 +17,12 @@ public class Lesson2 {
         //4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),
 // и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
         tusk4();
+        //5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
+        tusk5();
 
 
     }
+
     static void tusk1(){
         System.out.println("tusk1:");
         int[] array = {1, 1, 1, 0, 1, 0, 1, 1, 0, 0};
@@ -81,6 +84,15 @@ public class Lesson2 {
         System.out.println("***********");
         System.out.println("***********");
     }
+    static void tusk5(){
+        int[] array = {1, 2, 3, 4, 18, 20, 100, 1000, -8, 20};
+        arrayMin(array);
+        arrayMax(array);
+        System.out.println("***********:");
+        System.out.println("***********:");
+    }
+
+    
     static void doubleArrayElementsLessNumber(int[] array, int number){
         for (int i = 0; i < array.length; i++) {
             if (array[i] < number){
@@ -124,9 +136,29 @@ public class Lesson2 {
             System.out.print(array[i]);
         }
     }
+    static int arrayMin(int[] array){
+        int min = array[0];
+        for (int a: array
+             ) {if (min>a){
+                 min = a;
+        }
+
+        }System.out.println("Minimum is: "+ min);
+        return min;
+    }
+    static int arrayMax(int[] array){
+        int max = array[0];
+        for (int a: array
+        ) {if (max<a){
+            max = a;
+        }
+
+        }System.out.println("Maximum is: "+ max);
+        return max;
+    }
 
 
-//5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
+
 //6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть
 // true, если в массиве есть место, в котором сумма левой и правой части массива равны.
 // Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница
