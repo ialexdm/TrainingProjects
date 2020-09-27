@@ -14,6 +14,9 @@ public class Lesson2 {
 
         //3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
         tusk3();
+        //4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),
+// и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
+        tusk4();
 
 
     }
@@ -49,6 +52,35 @@ public class Lesson2 {
         System.out.println("***********");
         System.out.println("***********");
     }
+
+    static void tusk4(){
+        System.out.println("tusk4:");
+        int[][] array = new int[9][9];
+        for (int[] ar: array
+             ) {
+            for (int a: ar
+                 ) {
+                a = 0;
+                System.out.print(a+" ");
+            }
+            System.out.println();
+
+        }
+        System.out.println("***********");
+        putOnesInDiagonalElementsOfSquareArray(array);
+        for (int[] ar: array
+        ) {
+            for (int a: ar
+            ) {
+                System.out.print(a+" ");
+            }
+            System.out.println();
+
+        }
+        System.out.println();
+        System.out.println("***********");
+        System.out.println("***********");
+    }
     static void doubleArrayElementsLessNumber(int[] array, int number){
         for (int i = 0; i < array.length; i++) {
             if (array[i] < number){
@@ -57,7 +89,12 @@ public class Lesson2 {
         }
     }
 
-
+    static void putOnesInDiagonalElementsOfSquareArray(int[][] array){
+        for (int i = 0; i < array.length; i++) {
+            array[i][i] = 1;
+            array[array.length-1-i][i] = 1;
+        }
+    }
     static void fillArrayGeometricProgression(int[] array, int step){
         for (int i = 0; i < array.length; i++) {
             array[i] = i*step;
