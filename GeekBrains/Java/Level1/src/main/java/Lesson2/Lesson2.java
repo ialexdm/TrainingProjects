@@ -19,9 +19,17 @@ public class Lesson2 {
         tusk4();
         //5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
         tusk5();
+        //6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть
+// true, если в массиве есть место, в котором сумма левой и правой части массива равны.
+// Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница
+// показана символами ||, эти символы в массив не входят.
+        tusk6();
 
 
     }
+
+
+
 
     static void tusk1(){
         System.out.println("tusk1:");
@@ -91,8 +99,15 @@ public class Lesson2 {
         System.out.println("***********:");
         System.out.println("***********:");
     }
+    static void tusk6(){
+        System.out.println("tusk6:");
+        int[] array = {1,1,2,3,1};
+        checkBalance(array);
+        System.out.println("***********:");
+        System.out.println("***********:");
+    }
 
-    
+
     static void doubleArrayElementsLessNumber(int[] array, int number){
         for (int i = 0; i < array.length; i++) {
             if (array[i] < number){
@@ -156,13 +171,34 @@ public class Lesson2 {
         }System.out.println("Maximum is: "+ max);
         return max;
     }
+    static boolean checkBalance(int[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            int sum1 = 0, sum2 = 0;
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                sum1 += array[j];
+            }
+            for (int q = array.length - 1; q >= array.length - 1 - i; q--) {
+                sum2 += array[q];
+            }
+            if (sum1 == sum2) {
+                for (int j = 0; j < array.length - 1 - i; j++) {
+                    System.out.print(array[j]);
+                }
+                System.out.print("||");
+                for (int q = array.length -i-1; q <= array.length - 1; q++) {
+                    System.out.print(array[q]);
+                }
+                System.out.println("→true");
+                return true;
+            }
+        }
+        System.out.println("false");
+        return false;
+    }
 
 
 
-//6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть
-// true, если в массиве есть место, в котором сумма левой и правой части массива равны.
-// Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница
-// показана символами ||, эти символы в массив не входят.
 //  7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным),
 //  при этом метод должен сместить все элементы массива на n позиций. Элементы смещаются циклично. Для усложнения задачи нельзя
 //  пользоваться вспомогательными массивами. Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2
