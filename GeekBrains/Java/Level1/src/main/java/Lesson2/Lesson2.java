@@ -7,6 +7,8 @@ public class Lesson2 {
 //    [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
         tusk1();
 
+        //2. Задать пустой целочисленный массив размером 8. С помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21;
+        tusk2();
 
 
     }
@@ -17,9 +19,22 @@ public class Lesson2 {
         System.out.println("***********:");
         System.out.println("***********:");
     }
+    static void tusk2(){
+        System.out.println("tusk2:");
+        int[] array = new int[8];
+        fillArrayGeometricProgression(array,3);
+        System.out.println();
+        System.out.println("***********");
+        System.out.println("***********");
+    }
 
 
-
+    static void fillArrayGeometricProgression(int[] array, int step){
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i*step;
+            System.out.print(array[i]+" ");
+        }
+    }
 
     static void binaryArrayInverter(int[] array){
         for (int i = 0; i < array.length; i++){
