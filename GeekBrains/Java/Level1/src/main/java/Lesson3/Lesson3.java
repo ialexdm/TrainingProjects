@@ -6,11 +6,15 @@ public class Lesson3 {
 
     public static void main(String[] args) {
         tusk1();
+        tusk2();
+
     }
   // 1. Написать программу, которая загадывает случайное число от 0 до 9, и пользователю дается 3 попытки угадать
     // это число. При каждой попытке компьютер должен сообщить больше ли указанное пользователем число чем загаданное,
     // или меньше. После победы или проигрыша выводится запрос –
     // «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет).
+
+
     public static void tusk1() {
         boolean isGameStart = true;
         int attempts =3;
@@ -53,11 +57,13 @@ public class Lesson3 {
 
         System.out.println("Game over");
     }
-
-
-    //         2 * Создать массив из слов String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
+    //         2 * Создать массив из слов String[] words = {"apple", "orange", "lemon", "banana",
+    //         "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak",
+    //         "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple",
+    //         "pumpkin", "potato"};
   // При запуске программы компьютер загадывает слово, запрашивает ответ у пользователя,
-  // сравнивает его с загаданным словом и сообщает правильно ли ответил пользователь. Если слово не угадано, компьютер показывает буквы которые стоят на своих местах.
+  // сравнивает его с загаданным словом и сообщает правильно ли ответил пользователь. Если слово не угадано,
+    // компьютер показывает буквы которые стоят на своих местах.
   //         apple – загаданное
   // apricot - ответ игрока
   // ap############# (15 символов, чтобы пользователь не мог узнать длину слова)
@@ -65,4 +71,49 @@ public class Lesson3 {
   // String str = "apple";str.charAt(0); - метод, вернет char, который стоит в слове str на первой позиции
   // Играем до тех пор, пока игрок не отгадает слово
   // Используем только маленькие буквы
+    public static void tusk2(){
+        Scanner scanner = new Scanner(System.in);
+        String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry",
+                "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut",
+                "pear", "pepper", "pineapple", "pumpkin", "potato"};
+        String random, userAnswer;
+        char[] answer = new char[15];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = '#';
+        }
+        boolean isGameRunning = true;
+        while (isGameRunning){
+            int count;
+            System.out.println("Guessing word...");
+            random = words[(int)(words.length - Math.random()*words.length)];
+            System.out.print("Word was guessing. ");
+            while(isGameRunning) {
+                System.out.println("Enter your answer: ");
+                userAnswer = scanner.nextLine();
+                if (userAnswer.length()>random.length()){
+                    count = random.length();
+                }else{
+                    count = userAnswer.length();
+                }
+                int answeredChars =0;
+                for (int i = 0; i < count; i++) {
+                    if (userAnswer.charAt(i) == random.charAt(i)) {
+                        answer[i] = userAnswer.charAt(i);
+                        answeredChars++;
+                    }
+                }
+                System.out.println("Open guessing chars: ");
+                for (char c : answer
+                ) {
+                    System.out.print(c);
+                }
+                System.out.println();
+                if (answeredChars == count){
+                    System.out.println("You win!");
+                    return;
+                }
+            }
+        }
+    }
+
 }
