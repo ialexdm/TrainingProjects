@@ -15,7 +15,15 @@ public class Lesson6 {
     public static void main(String[] args) {
         Cat tom = new Cat("Tomas");
         tom.jump(1.2);
+        tom.run(170);
+        tom.swim(2);
         System.out.println(tom);
+
+        Dog spike = new Dog("Spike");
+        spike.jump(1.2);
+        spike.run(170);
+        spike.swim(2);
+        System.out.println(spike);
 
     }
 }
