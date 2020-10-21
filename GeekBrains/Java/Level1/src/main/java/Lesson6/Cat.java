@@ -10,7 +10,7 @@ public class Cat extends Animal{
     }
 
     @Override
-    protected String getFormattedName() {
+    public String getFormattedName() {
         return "Cat " + name;
     }
 
@@ -20,7 +20,7 @@ public class Cat extends Animal{
     }
 
     @Override
-    protected boolean swim(double distance){
+    public boolean swim(double distance){
         System.out.println(getFormattedName() + " can not swim");
         return false;
     }

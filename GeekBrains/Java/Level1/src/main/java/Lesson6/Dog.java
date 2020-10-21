@@ -10,7 +10,7 @@ public class Dog extends Animal {
     }
 
     @Override
-    protected String getFormattedName() {
+    public String getFormattedName() {
         return "Dog " + name;
     }
 
