@@ -13,6 +13,9 @@ public class Lesson6 {
 //      на бег может быть 400 м., у другой 600 м.
 
     public static void main(String[] args) {
+        Cat tom = new Cat("Tomas");
+        tom.jump(1.2);
+        System.out.println(tom);
 
     }
 }
