@@ -9,34 +9,34 @@ public abstract class Animal {
 
     protected boolean run(double distance){
         if (distance<=runDistance){
-            System.out.println(getFormatedName() + " пробежал через препятствие!!!");
+            System.out.println(getFormattedName() + " пробежал через препятствие!!!");
             return true;
         }
         else {
-            System.out.println(getFormatedName() + " не смог пробежать препятствие.=(((");
+            System.out.println(getFormattedName() + " не смог пробежать препятствие.=(((");
         }
         return false;
     }
     protected boolean swim(double distance){
         if (distance<=swimDistance){
-        System.out.println(getFormatedName() + " переплыл препятствие!!!");
+        System.out.println(getFormattedName() + " переплыл препятствие!!!");
         return true;
     }
     else {
-        System.out.println(getFormatedName() + " не смог переплыть препятствие.=(((");
+        System.out.println(getFormattedName() + " не смог переплыть препятствие.=(((");
     }
         return false;}
     protected boolean jump(double height){
         if (height<=jumpHeight){
-            System.out.println(getFormatedName() + " перепрыгнул препятствие!!!");
+            System.out.println(getFormattedName() + " перепрыгнул препятствие!!!");
             return true;
         }
         else {
-            System.out.println(getFormatedName() + " не смог перепрыгнуть препятствие.=(((");
+            System.out.println(getFormattedName() + " не смог перепрыгнуть препятствие.=(((");
         }
         return false;
     }
-    protected abstract String getFormatedName();
+    protected abstract String getFormattedName();
 
 
 

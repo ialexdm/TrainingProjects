@@ -10,18 +10,18 @@ public class Cat extends Animal{
     }
 
     @Override
-    protected String getFormatedName() {
+    protected String getFormattedName() {
         return "Cat " + name;
     }
 
     @Override
     public String toString() {
-        return getFormatedName() + " " + runDistance + " " + swimDistance + " " + jumpHeight;
+        return getFormattedName() + " " + runDistance + " " + swimDistance + " " + jumpHeight;
     }
 
     @Override
     protected boolean swim(double distance){
-        System.out.println(getFormatedName() + " can not swim");
+        System.out.println(getFormattedName() + " can not swim");
         return false;
     }
 }
