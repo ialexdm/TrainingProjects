@@ -15,6 +15,15 @@ public class Main {
        Если участник не смог пройти одно из препятствий, то дальше по списку он препятствий не идет.
       */
     public static void main(String[] args) {
+        Human boris= new Human();
+        Cat barsik = new Cat();
+        Robot df4mark1 = new Robot();
+        boris.run();
+        boris.jump();
+        barsik.run();
+        barsik.jump();
+        df4mark1.run();
+        df4mark1.jump();
 
     }
 }
