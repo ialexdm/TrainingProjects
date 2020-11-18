@@ -1,3 +1,5 @@
 # TrainingProjects
     GeekBrains
-        Java1
+        Java Level 1
+        
+        Java Level 2
