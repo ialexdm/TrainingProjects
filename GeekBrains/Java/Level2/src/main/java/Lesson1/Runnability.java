@@ -1,5 +1,5 @@
 package Lesson1;
 
-public interface Runnability {
+public interface Runnability extends Ability {
     void run();
 }

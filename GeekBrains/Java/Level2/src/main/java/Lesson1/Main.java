@@ -15,15 +15,16 @@ public class Main {
        Если участник не смог пройти одно из препятствий, то дальше по списку он препятствий не идет.
       */
     public static void main(String[] args) {
-        Human boris= new Human();
-        Cat barsik = new Cat();
-        Robot df4mark1 = new Robot();
-        boris.run();
-        boris.jump();
-        barsik.run();
-        barsik.jump();
-        df4mark1.run();
-        df4mark1.jump();
+        Ability[] ability = {new Cat(), new Human(), new Robot()};
+        Stage[] stages = {new Wall(3), new Track(3), new Wall(5), new Track(5), new Wall(10), new Track(10)};
+        for (int i = 0; i < ability.length; i++) {
+            for (int j = 0; j < stages.length; j++) {
+                ability[i].overcome(stages[j]);
+                if (!stages[j].wasOvercame()){
+                    break;
+                }
+            }
+        }
 
     }
 }
