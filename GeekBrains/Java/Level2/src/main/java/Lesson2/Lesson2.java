@@ -11,6 +11,42 @@ public class Lesson2 {
     и вывести результат расчета.
 */
     public static void main(String[] args) {
+        String[][] numbers = {{"1","1","1","s"},{"1","1","1","1"},{"1","1","1","1"},{"1","1","1","1"}};
 
+        try {
+            System.out.println(sum(numbers));
+        } catch (MyArraySizeException e) {
+            e.printStackTrace();
+        } catch (MyArrayDataException e){
+            e.printStackTrace();
+        }
+
+    }
+    static int sum(String[][] numbers)  throws MyArraySizeException, MyArrayDataException{
+        if (numbers.length !=4){
+            throw new MyArraySizeException("Не правильный размер массива");
+        } else
+            {
+                for (int i = 0; i <numbers.length ; i++) {
+                    if(numbers[i].length !=4){
+                        throw new MyArraySizeException("Не правильный размер массива");
+                    }
+                }
+            }
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                try {
+                    sum += Integer.parseInt(numbers[i][j]);
+                }catch (NumberFormatException e){
+                    throw new MyArrayDataException("элемент [" + i + "]["+ j +"] не может быть приведен к типу int");
+
+                }
+
+
+
+            }
+        }
+        return sum;
     }
 }
