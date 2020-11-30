@@ -13,6 +13,8 @@ public class ChatWindow extends JFrame {
         setTitle("GeekBrainsChat");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         centreWindowOnScreen(700,900);
+        setBackground(Color.BLACK);
+        setForeground(Color.WHITE);
 
         left = new JPanel();
         left.setSize(500,700);
@@ -27,13 +29,19 @@ public class ChatWindow extends JFrame {
         final JTextArea chatArea = new JTextArea();
         chatArea.setSize(500,700);
         chatArea.setEditable(false);
+        chatArea.setBackground(Color.black);
+        chatArea.setForeground(Color.WHITE);
         JScrollPane scrollPane = new JScrollPane(chatArea);
         scrollPane.setBounds(0,0,500,700);
         left.add(scrollPane);
 
         right.setLayout(new FlowLayout());
         JButton pub = new JButton("public");
+        pub.setBackground(Color.black);
+        pub.setForeground(Color.WHITE);
         JButton pub2 = new JButton("public2");
+        pub2.setBackground(Color.black);
+        pub2.setForeground(Color.WHITE);
         right.add(pub);
         right.add(pub2);
 
@@ -41,8 +49,14 @@ public class ChatWindow extends JFrame {
         sendButton = new JButton("Send");
         final JTextField message = new JTextField();
         bottom.setLayout(new BorderLayout());
+
+        sendButton.setForeground(Color.WHITE);
+        sendButton.setBackground(Color.BLACK);
+        message.setForeground(Color.WHITE);
+        message.setBackground(Color.BLACK);
         bottom.add(message, BorderLayout.PAGE_START);
         bottom.add(sendButton, BorderLayout.PAGE_END);
+
 
         sendButton.addActionListener(new ActionListener() {
 
@@ -51,6 +65,15 @@ public class ChatWindow extends JFrame {
                 message.setText("");
             }
         });
+
+        message.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                chatArea.setText(chatArea.getText() + message.getText()+"\n");
+                message.setText("");
+            }
+        });
+
 
 
         add(right, BorderLayout.EAST);
