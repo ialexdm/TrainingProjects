@@ -13,9 +13,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     public AuthenticationServiceImpl() {
         this.usersList = new LinkedList<UserEntity>();
-        usersList.add(new UserEntity("Nick1","login1","pass1"));
-        usersList.add(new UserEntity("Nick2","login2","pass2"));
-        usersList.add(new UserEntity("Nick3","login3","pass3"));
+        usersList.add(new UserEntity("login1","pass1","Nick1"));
+        usersList.add(new UserEntity("login2","pass2","Nick2"));
+        usersList.add(new UserEntity("login3","pass3","Nick3"));
     }
 
     public void start() {
@@ -30,14 +30,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         System.out.println("AuthenticationService was stopped.");
     }
     private class UserEntity{
-        private String nick;
         private String login;
         private String password;
+        private String nick;
 
-        public UserEntity(String nick, String login, String password) {
-            this.nick = nick;
+        public UserEntity(String login, String password, String nick) {
             this.login = login;
             this.password = password;
+            this.nick = nick;
         }
 
     }
