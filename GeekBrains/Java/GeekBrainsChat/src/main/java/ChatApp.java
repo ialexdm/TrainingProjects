@@ -1,6 +1,6 @@
 import window.ChatWindow;
 
-public class Main {
+public class ChatApp {
     public static void main(String[] args) {
         new ChatWindow();
 
