@@ -6,8 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChatWindow extends JFrame {
-    JPanel left, right, bottom;
-    JButton sendButton;
+    protected JPanel left, right, bottom;
+    protected JButton sendButton;
+    protected JTextArea chatArea;
     public ChatWindow(){
 
         setTitle("GeekBrainsChat");
@@ -26,7 +27,7 @@ public class ChatWindow extends JFrame {
 
 
         left.setLayout(new BorderLayout());
-        final JTextArea chatArea = new JTextArea();
+        chatArea = new JTextArea();
         chatArea.setSize(500,700);
         chatArea.setEditable(false);
         chatArea.setBackground(Color.black);
@@ -71,6 +72,7 @@ public class ChatWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 chatArea.setText(chatArea.getText() + message.getText()+"\n");
                 message.setText("");
+
             }
         });
 
