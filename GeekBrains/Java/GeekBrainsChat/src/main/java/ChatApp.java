@@ -1,8 +1,9 @@
-import window.ChatWindow;
+import services.ServerImpl;
+
 
 public class ChatApp {
     public static void main(String[] args) {
-        new ChatWindow();
+        new ServerImpl();
 
     }
 }

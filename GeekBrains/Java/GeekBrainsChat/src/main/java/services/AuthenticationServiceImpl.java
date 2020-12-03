@@ -22,7 +22,13 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         System.out.println("AuthenticationService was started...");
     }
 
-    public String getNick(String login, String Password) {
+    public String getNick(String login, String password) {
+        for (UserEntity u :
+             usersList) {
+            if (u.login.equals(login) && u.password.equals(password)){
+                return u.nick;
+            }
+        }
         return null;
     }
 

@@ -12,4 +12,6 @@ public interface Server {
     void subscribe(ClientHandler clientHandler);
 
     void unsubscribe(ClientHandler clientHandler);
+
+    public AuthenticationService getAuthenticationService();
 }
