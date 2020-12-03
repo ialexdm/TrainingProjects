@@ -1,8 +1,8 @@
-package services;
+package server.services;
 
-import handler.ClientHandler;
-import interfaces.AuthenticationService;
-import interfaces.Server;
+import server.handler.ClientHandler;
+import server.interfaces.AuthenticationService;
+import server.interfaces.Server;
 
 import java.io.IOException;
 import java.net.ServerSocket;

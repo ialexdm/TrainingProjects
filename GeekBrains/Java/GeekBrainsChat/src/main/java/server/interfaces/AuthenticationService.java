@@ -1,4 +1,4 @@
-package interfaces;
+package server.interfaces;
 
 public interface AuthenticationService {
     void start();

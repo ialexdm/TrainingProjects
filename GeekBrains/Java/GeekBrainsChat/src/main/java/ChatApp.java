@@ -1,4 +1,4 @@
-import services.ServerImpl;
+import server.services.ServerImpl;
 
 
 public class ChatApp {

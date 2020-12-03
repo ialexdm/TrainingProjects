@@ -1,8 +1,7 @@
-package services;
+package server.services;
 
-import interfaces.AuthenticationService;
+import server.interfaces.AuthenticationService;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

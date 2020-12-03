@@ -1,6 +1,6 @@
-package interfaces;
+package server.interfaces;
 
-import handler.ClientHandler;
+import server.handler.ClientHandler;
 
 public interface Server {
     int PORT = 8189;

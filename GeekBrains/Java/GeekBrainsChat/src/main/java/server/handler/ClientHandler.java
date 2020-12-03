@@ -1,6 +1,6 @@
-package handler;
+package server.handler;
 
-import interfaces.Server;
+import server.interfaces.Server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
