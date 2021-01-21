@@ -2,8 +2,7 @@ package client.window;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class ChatWindow extends JFrame {
     protected JPanel left, right, bottom;
@@ -60,20 +59,9 @@ public class ChatWindow extends JFrame {
         bottom.add(sendButton, BorderLayout.PAGE_END);
 
 
-        sendButton.addActionListener(new ActionListener() {
+        sendButton.addActionListener(e -> sendMessage());
 
-            public void actionPerformed(ActionEvent e) {
-                sendMessage();
-            }
-        });
-
-        messageField.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                sendMessage();
-
-            }
-        });
+        messageField.addActionListener(e -> sendMessage());
 
 
 
