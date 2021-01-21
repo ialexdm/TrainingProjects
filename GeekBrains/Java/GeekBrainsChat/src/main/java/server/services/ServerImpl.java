@@ -20,7 +20,7 @@ public class ServerImpl implements Server {
             ServerSocket serverSocket = new ServerSocket(PORT);
             authenticationService = new AuthenticationServiceImpl();
             authenticationService.start();
-            clients = new LinkedList();
+            clients = new LinkedList<>();
             while (true){
                 System.out.println("Wait join clients");
                 Socket socket = serverSocket.accept();
@@ -64,9 +64,9 @@ public class ServerImpl implements Server {
         }
     }
     private void sendWhisperMessage(String[] commandData){
-        String whisperMessage = "";
+        StringBuilder whisperMessage = new StringBuilder();
         for (int i = 2; i<commandData.length; i++){
-            whisperMessage = whisperMessage + commandData[i] + " ";
+            whisperMessage.append(commandData[i]).append(" ");
         }
         for (ClientHandler c : clients) {
             if (commandData[2].equals(c.getNick())) {
