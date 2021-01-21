@@ -65,7 +65,7 @@ public class ServerImpl implements Server {
     }
     private void sendWhisperMessage(String[] commandData){
         StringBuilder whisperMessage = new StringBuilder();
-        for (int i = 2; i<commandData.length; i++){
+        for (int i = 3; i<commandData.length; i++){
             whisperMessage.append(commandData[i]).append(" ");
         }
         for (ClientHandler c : clients) {
