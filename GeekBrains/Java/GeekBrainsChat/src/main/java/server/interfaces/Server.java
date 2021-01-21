@@ -14,4 +14,6 @@ public interface Server {
     void unsubscribe(ClientHandler clientHandler);
 
     public AuthenticationService getAuthenticationService();
+
+    void executeCommand(String s);
 }

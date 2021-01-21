@@ -49,7 +49,29 @@ public class ServerImpl implements Server {
 
     public synchronized void broadcastMessage(String message) {
         for (ClientHandler c : clients){
-            c.sendMessage(message);
+            if (!message.startsWith(c.getNick()) && !message.startsWith("/")){
+                c.sendMessage(message);
+            }
+        }
+    }
+
+    public void executeCommand(String command) {
+        String[] commandData = command.split("\\s");
+        if (commandData[1].equals("/w") && commandData.length > 3) {
+            sendWhisperMessage(commandData);
+        } else{
+            System.out.println("Unknown command");
+        }
+    }
+    private void sendWhisperMessage(String[] commandData){
+        String whisperMessage = "";
+        for (int i = 2; i<commandData.length; i++){
+            whisperMessage = whisperMessage + commandData[i] + " ";
+        }
+        for (ClientHandler c : clients) {
+            if (commandData[2].equals(c.getNick())) {
+                c.sendMessage("[WHISPER] " + commandData[0] + " " + "to you: " + whisperMessage);
+            }
         }
     }
 

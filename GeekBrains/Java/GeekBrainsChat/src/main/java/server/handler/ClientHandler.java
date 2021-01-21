@@ -79,11 +79,17 @@ public class ClientHandler {
             try {
                 String clientStr = dataInputStream.readUTF();
                 System.out.println("From " + this.nick + ": " + clientStr);
-                if (clientStr.equals("/exit)"))
-                {
-                    return;
+
+                if (clientStr.startsWith("/")){
+                    server.executeCommand(this.nick + " " + clientStr);
+                    if (clientStr.equals("/exit)"))
+                    {
+                        return;
+                    }
+                }else{
+                    server.broadcastMessage(this.nick + ": " + clientStr);
                 }
-                server.broadcastMessage(this.nick + ": " + clientStr);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

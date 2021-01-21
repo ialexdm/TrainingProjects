@@ -19,20 +19,19 @@ public class ClientService extends ChatWindow {
             socket = new Socket("localhost",8189);
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
-            setAutorized(false);
             Thread t1 = new Thread(() -> {
                 try{
                     while (true){
                         String strMsg = dataInputStream.readUTF();
                         if (strMsg.equals("/authOk")){
-                            setAutorized(true);
+
                             break;
                         }
                         super.chatArea.append(strMsg + "\n");
                     }
                     while (true){
                         String strMsg = dataInputStream.readUTF();
-                        if (strMsg.equals("/exit"){
+                        if (strMsg.equals("/exit")){
                             break;
                         }
                         super.chatArea.append(strMsg + "\n");
@@ -47,4 +46,18 @@ public class ClientService extends ChatWindow {
             e.printStackTrace();
         }
     }
+    @Override
+    protected void sendMessage(){
+        if (!messageField.getText().isEmpty()){
+            try {
+                dataOutputStream.writeUTF(messageField.getText());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            super.sendMessage();
+
+        }
+
+    }
+
 }

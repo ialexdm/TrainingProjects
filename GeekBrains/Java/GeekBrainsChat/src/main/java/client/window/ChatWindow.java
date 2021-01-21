@@ -9,6 +9,7 @@ public class ChatWindow extends JFrame {
     protected JPanel left, right, bottom;
     protected JButton sendButton;
     protected JTextArea chatArea;
+    protected JTextField messageField;
     public ChatWindow(){
 
         setTitle("GeekBrainsChat");
@@ -48,30 +49,28 @@ public class ChatWindow extends JFrame {
 
 
         sendButton = new JButton("Send");
-        final JTextField message = new JTextField();
+        messageField = new JTextField();
         bottom.setLayout(new BorderLayout());
 
         sendButton.setForeground(Color.WHITE);
         sendButton.setBackground(Color.BLACK);
-        message.setForeground(Color.WHITE);
-        message.setBackground(Color.BLACK);
-        bottom.add(message, BorderLayout.PAGE_START);
+        messageField.setForeground(Color.WHITE);
+        messageField.setBackground(Color.BLACK);
+        bottom.add(messageField, BorderLayout.PAGE_START);
         bottom.add(sendButton, BorderLayout.PAGE_END);
 
 
         sendButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                chatArea.setText(chatArea.getText() + message.getText()+"\n");
-                message.setText("");
+                sendMessage();
             }
         });
 
-        message.addActionListener(new ActionListener() {
+        messageField.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                chatArea.setText(chatArea.getText() + message.getText()+"\n");
-                message.setText("");
+                sendMessage();
 
             }
         });
@@ -92,6 +91,10 @@ public class ChatWindow extends JFrame {
         int x = (int) ((dimension.getWidth() - width) / 2 );
         int y = (int) ((dimension.getHeight() - height) / 2);
         setBounds(x,y,width,height);
+    }
+    protected void sendMessage(){
+        chatArea.setText(chatArea.getText() +"I am: " + messageField.getText()+"\n");
+        messageField.setText("");
     }
 
 
