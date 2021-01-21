@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
-    private Socket socket;
-    private Server server;
-    private DataInputStream dataInputStream;
-    private DataOutputStream dataOutputStream;
+    private final Socket socket;
+    private final Server server;
+    private final DataInputStream dataInputStream;
+    private final DataOutputStream dataOutputStream;
 
     private String nick;
 
@@ -49,7 +49,7 @@ public class ClientHandler {
             if (str.startsWith("/auth")){
                 String[] dataArray = str.split("\\s");
                 String nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
-                if (nick == "" || nick != null){
+                if (nick != null){
                     if (!server.isNickBusy(nick)){
                         sendMessage("/authOK" + nick);
                         this.nick = nick;
