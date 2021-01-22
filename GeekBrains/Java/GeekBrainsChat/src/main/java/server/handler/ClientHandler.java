@@ -42,7 +42,6 @@ public class ClientHandler {
             throw new RuntimeException("Troubles with create ClientHandler");
         }
     }
-
     private void authentication() throws IOException {
         while (true){
             String str = dataInputStream.readUTF();
@@ -51,7 +50,7 @@ public class ClientHandler {
                 String nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
                 if (nick != null){
                     if (!server.isNickBusy(nick)){
-                        sendMessage("/authOK" + nick);
+                        sendMessage("/authOK " + nick);
                         this.nick = nick;
                         server.broadcastMessage(this.nick + " join to chat");
                         server.subscribe(this);
@@ -79,13 +78,8 @@ public class ClientHandler {
             try {
                 String clientStr = dataInputStream.readUTF();
                 System.out.println("From " + this.nick + ": " + clientStr);
-
                 if (clientStr.startsWith("/")){
-                    server.executeCommand(this.nick + " " + clientStr);
-                    if (clientStr.equals("/exit)"))
-                    {
-                        return;
-                    }
+                    server.executeCommand(this, clientStr);
                 }else{
                     server.broadcastMessage(this.nick + ": " + clientStr);
                 }
@@ -97,11 +91,11 @@ public class ClientHandler {
     }
     public void closeConnection(){
         try {
+            dataInputStream.close();
+            dataOutputStream.close();
+            socket.close();
             server.unsubscribe(this);
             server.broadcastMessage(this.nick + " out from chat");
-            dataOutputStream.close();
-            dataInputStream.close();
-            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

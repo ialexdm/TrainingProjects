@@ -23,8 +23,7 @@ public class ClientService extends ChatWindow {
                 try{
                     while (true){
                         String strMsg = dataInputStream.readUTF();
-                        if (strMsg.equals("/authOk")){
-
+                        if (strMsg.startsWith("/authOk")){
                             break;
                         }
                         super.chatArea.append(strMsg + "\n");
@@ -47,7 +46,7 @@ public class ClientService extends ChatWindow {
         }
     }
     @Override
-    protected void sendMessage(){
+    protected synchronized void sendMessage(){
         if (!messageField.getText().isEmpty()){
             try {
                 dataOutputStream.writeUTF(messageField.getText());
