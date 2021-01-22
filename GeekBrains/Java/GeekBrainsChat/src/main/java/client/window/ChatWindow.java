@@ -81,7 +81,10 @@ public class ChatWindow extends JFrame {
         setBounds(x,y,width,height);
     }
     protected void sendMessage(){
-        chatArea.setText(chatArea.getText() +"I am: " + messageField.getText()+"\n");
+        if (!messageField.getText().startsWith("/")){
+            chatArea.append("I am: ");
+        }
+        chatArea.append(messageField.getText() + "\n");
         messageField.setText("");
     }
 

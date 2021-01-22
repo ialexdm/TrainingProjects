@@ -23,16 +23,20 @@ public class ClientService extends ChatWindow {
                 try{
                     while (true){
                         String strMsg = dataInputStream.readUTF();
-                        if (strMsg.equals("/authOk")){
-
+                        if (strMsg.startsWith("/authOk")){
                             break;
+                        }
+                        else if (strMsg.startsWith("/exit")){
+                            super.chatArea.append("Close connection. You out of chat\n");
+                            return;
                         }
                         super.chatArea.append(strMsg + "\n");
                     }
                     while (true){
                         String strMsg = dataInputStream.readUTF();
-                        if (strMsg.equals("/exit")){
-                            break;
+                        if (strMsg.startsWith("/exit")){
+                            super.chatArea.append("Close connection. You out of chat\n");
+                            return;
                         }
                         super.chatArea.append(strMsg + "\n");
                     }
@@ -47,7 +51,7 @@ public class ClientService extends ChatWindow {
         }
     }
     @Override
-    protected void sendMessage(){
+    protected synchronized void sendMessage(){
         if (!messageField.getText().isEmpty()){
             try {
                 dataOutputStream.writeUTF(messageField.getText());

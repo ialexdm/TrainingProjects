@@ -12,11 +12,14 @@ public class ClientHandler {
     private final Server server;
     private final DataInputStream dataInputStream;
     private final DataOutputStream dataOutputStream;
-
+    private boolean connection;
     private String nick;
 
     public String getNick(){
         return nick;
+    }
+    public void setConnection(boolean connection) {
+        this.connection = connection;
     }
     public ClientHandler(Server server, Socket socket){
 
@@ -27,11 +30,12 @@ public class ClientHandler {
             this.dataInputStream = new DataInputStream(socket.getInputStream());
             this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
             this.nick = "";
+            connection = true;
             new Thread(() -> {
                     try {
                         authentication();
                         readMessage();
-                    }catch (IOException e){
+                    }catch (IOException e) {
                         e.printStackTrace();
                     }finally {
                         closeConnection();
@@ -42,28 +46,41 @@ public class ClientHandler {
             throw new RuntimeException("Troubles with create ClientHandler");
         }
     }
-
     private void authentication() throws IOException {
-        while (true){
-            String str = dataInputStream.readUTF();
-            if (str.startsWith("/auth")){
-                String[] dataArray = str.split("\\s");
-                String nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
-                if (nick != null){
-                    if (!server.isNickBusy(nick)){
-                        sendMessage("/authOK" + nick);
-                        this.nick = nick;
-                        server.broadcastMessage(this.nick + " join to chat");
-                        server.subscribe(this);
-                        return;
-                    }else{
-                        sendMessage("You already have been authenticate");
-                        return;
-                    }
-                }else {
-                    sendMessage("Incorrect login or password");
-                }
+        new Thread(()-> {
+            try {
+                Thread.sleep(120000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            if (this.nick == null || this.nick.equals("")){
+                sendMessage("authentication TimeOut(120 sec)");
+                server.executeCommand(this,"/exit");
+                sendMessage("/exit");
+                connection = false;
+                return;
+            }
+        }).start();
+        while (connection){
+                String str = null;
+                str = dataInputStream.readUTF();
+                if (str.startsWith("/auth") && connection){
+                    String[] dataArray = str.split("\\s");
+                    String nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
+                    if (nick != null){
+                        if (!server.isNickBusy(nick)){
+                            sendMessage("/authOK " + nick);
+                            this.nick = nick;
+                            server.broadcastMessage(this.nick + " join to chat");
+                            server.subscribe(this);
+                            return;
+                        }else{
+                            sendMessage("Nick is busy");
+                        }
+                    }else {
+                        sendMessage("Incorrect login or password");
+                    }
+                }
         }
     }
 
@@ -75,21 +92,19 @@ public class ClientHandler {
         }
     }
     public void readMessage(){
-        while (true){
+        while (connection){
             try {
                 String clientStr = dataInputStream.readUTF();
                 System.out.println("From " + this.nick + ": " + clientStr);
-
                 if (clientStr.startsWith("/")){
-                    server.executeCommand(this.nick + " " + clientStr);
-                    if (clientStr.equals("/exit)"))
-                    {
-                        return;
-                    }
-                }else{
+                    server.executeCommand(this, clientStr);
+                }
+                else if (clientStr.startsWith("/exit")){
+                    connection = false;
+                }
+                else{
                     server.broadcastMessage(this.nick + ": " + clientStr);
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -97,11 +112,14 @@ public class ClientHandler {
     }
     public void closeConnection(){
         try {
+            sendMessage("/exit");
+            connection = false;
             server.unsubscribe(this);
             server.broadcastMessage(this.nick + " out from chat");
-            dataOutputStream.close();
-            dataInputStream.close();
             socket.close();
+            dataInputStream.close();
+            dataOutputStream.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

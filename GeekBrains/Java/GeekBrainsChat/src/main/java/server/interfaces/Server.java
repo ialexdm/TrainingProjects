@@ -15,5 +15,9 @@ public interface Server {
 
     AuthenticationService getAuthenticationService();
 
-    void executeCommand(String s);
+    void sendMessageToClient(ClientHandler from, String to, String message);
+
+    void broadcastClientList();
+
+    void executeCommand(ClientHandler from, String command);
 }

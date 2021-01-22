@@ -55,17 +55,51 @@ public class ServerImpl implements Server {
         }
     }
 
-    public void executeCommand(String command) {
+    public void executeCommand(ClientHandler from ,String command) {
         String[] commandData = command.split("\\s");
-        if (commandData[1].equals("/w") && commandData.length > 3) {
-            sendWhisperMessage(commandData);
-        } else{
-            System.out.println("Unknown command");
+        if (command.startsWith("/clients")){
+            broadcastClientList();
+            return;
+        }if (command.startsWith("/exit")){
+            from.setConnection(false);
+            System.out.println("Client out of chat");
+            return;
+        }
+        else if (commandData[0].equals("/w") && commandData.length > 2){
+            StringBuilder message = new StringBuilder();
+            for (int i = 2; i< commandData.length; i++){
+                message.append(commandData[i]).append(" ");
+                sendMessageToClient(from, commandData[1], "" + message);
+                return;
+            }
+        }
+        from.sendMessage("Server: Unknown command");
+        System.out.println("Unknown command");
+    }
+
+    @Override
+    public synchronized void sendMessageToClient(ClientHandler from, String to, String message) {
+        for (ClientHandler c : clients){
+            if (c.getNick().equals(to)){
+                c.sendMessage("[WHISPER] from " + from.getNick() + " to you: " + message);
+                from.sendMessage("[WHISPER] from you to " + c.getNick() + ": " + message );
+                return;
+            }
         }
     }
+
+    @Override
+    public synchronized void broadcastClientList() {
+        StringBuilder clientsList = new StringBuilder("/clients");
+        for (ClientHandler c : clients){
+            clientsList.append(c.getNick() + " ");
+        }
+        broadcastMessage(clientsList.toString());
+    }
+//new method is sendMessageToClient
     private void sendWhisperMessage(String[] commandData){
         StringBuilder whisperMessage = new StringBuilder();
-        for (int i = 2; i<commandData.length; i++){
+        for (int i = 3; i<commandData.length; i++){
             whisperMessage.append(commandData[i]).append(" ");
         }
         for (ClientHandler c : clients) {
@@ -74,6 +108,7 @@ public class ServerImpl implements Server {
             }
         }
     }
+
 
     public synchronized void subscribe(ClientHandler clientHandler) {
         clients.add(clientHandler);
