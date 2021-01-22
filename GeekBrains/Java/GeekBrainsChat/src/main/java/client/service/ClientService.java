@@ -26,12 +26,17 @@ public class ClientService extends ChatWindow {
                         if (strMsg.startsWith("/authOk")){
                             break;
                         }
+                        else if (strMsg.startsWith("/exit")){
+                            super.chatArea.append("Close connection. You out of chat\n");
+                            return;
+                        }
                         super.chatArea.append(strMsg + "\n");
                     }
                     while (true){
                         String strMsg = dataInputStream.readUTF();
-                        if (strMsg.equals("/exit")){
-                            break;
+                        if (strMsg.startsWith("/exit")){
+                            super.chatArea.append("Close connection. You out of chat\n");
+                            return;
                         }
                         super.chatArea.append(strMsg + "\n");
                     }

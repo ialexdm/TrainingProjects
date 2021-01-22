@@ -60,6 +60,10 @@ public class ServerImpl implements Server {
         if (command.startsWith("/clients")){
             broadcastClientList();
             return;
+        }if (command.startsWith("/exit")){
+            from.setConnection(false);
+            System.out.println("Client out of chat");
+            return;
         }
         else if (commandData[0].equals("/w") && commandData.length > 2){
             StringBuilder message = new StringBuilder();
