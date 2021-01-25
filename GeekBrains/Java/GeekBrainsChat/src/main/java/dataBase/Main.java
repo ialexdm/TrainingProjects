@@ -9,6 +9,7 @@ public class Main {
         //userDAO.addUser(new User("login4", "pass4", "Nick4"));
         //System.out.println(userDAO.getUserByNick("Nick4"));
         System.out.println(userDAO.getAllUser());
+        System.out.println(userDAO.getNickByLoginPassword("login2", "pass2"));
     }
 }
 

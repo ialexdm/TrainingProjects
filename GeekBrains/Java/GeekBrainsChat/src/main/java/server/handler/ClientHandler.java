@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ClientHandler {
     private final Socket socket;
@@ -66,7 +67,12 @@ public class ClientHandler {
                 str = dataInputStream.readUTF();
                 if (str.startsWith("/auth") && connection){
                     String[] dataArray = str.split("\\s");
-                    String nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
+                    String nick = null;
+                    try {
+                        nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
+                    } catch (SQLException t) {
+                        t.printStackTrace();
+                    }
                     if (nick != null){
                         if (!server.isNickBusy(nick)){
                             sendMessage("/authOK " + nick);

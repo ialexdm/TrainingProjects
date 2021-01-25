@@ -31,6 +31,21 @@ public class UserDAO {
 
     }
 
+    public String getNickByLoginPassword(String login,String password) throws SQLException {
+        ps = DBConn.getInstance().connection().prepareStatement("SELECT * FROM users where login = ? and  pass = ?;");
+        ps.setString(1, login);
+        ps.setString(2, password);
+        ResultSet set = ps.executeQuery();
+        User user = new User();
+        if(set.next()){
+            user.setLogin(set.getString("LOGIN"));
+            user.setPass(set.getString("PASS"));
+            user.setNick(set.getString("NICK"));
+        }
+        return user.getNick();
+
+    }
+
     public List<User> getAllUser() throws SQLException {
         List<User> userList = new ArrayList<>();
         ps = DBConn.getInstance().connection().prepareStatement("SELECT * FROM users");
