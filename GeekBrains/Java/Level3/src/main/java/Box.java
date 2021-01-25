@@ -17,7 +17,7 @@ public class Box<T extends Fruit> {
     public void putInBox(T t){
         intoList.add(t);
     }
-    public boolean compare(Box box){
+    public boolean compare(Box<? extends Fruit> box){
         if (this.getWeight() == box.getWeight() ){
             return true;
         }
