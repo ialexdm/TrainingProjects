@@ -19,7 +19,7 @@ public class DBConn {//Singleton
         String user = rb.getString("user");
         String password = rb.getString("password");
 
-        String jdbcURL = MessageFormat.format("jdbc:mysql://{0}:{1}/{2}", host, port, db);
+        String jdbcURL = MessageFormat.format("jdbc:mysql://{0}:{1}/{2}?useUnicode=true&serverTimezone=UTC", host, port, db);
         conn = DriverManager.getConnection(jdbcURL, user, password);
     }
 
