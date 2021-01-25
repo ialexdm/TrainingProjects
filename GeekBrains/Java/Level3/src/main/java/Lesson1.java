@@ -1,9 +1,12 @@
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 public class Lesson1 {
     public static void main(String[] args){
         /*
         Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
         Написать метод, который преобразует массив в ArrayList;
         Задача:
+
         Даны классы Fruit, Apple extends Fruit, Orange extends Fruit;
         Класс Box, в который можно складывать фрукты. Коробки условно сортируются по типу фрукта,
         поэтому в одну коробку нельзя сложить и яблоки, и апельсины;
@@ -24,6 +27,15 @@ public class Lesson1 {
         transformer.swapArrayElements(strings,0,2);
         //tusk2
         System.out.println(transformer.transformArrayToList(strings));
+        //tusk3
+        Box<Orange> orangeBox = new Box<Orange>(new Orange(),new Orange(),new Orange(),new Orange());
+        Box<Apple> bigAppleBox = new Box<Apple>(new Apple(),new Apple(),new Apple(),new Apple());
+        Box<Apple> smallAppleBox = new Box<Apple>(new Apple(),new Apple());
+        System.out.println(bigAppleBox.compare(orangeBox));
+        smallAppleBox.reFill(bigAppleBox);
+        System.out.println(bigAppleBox.compare(orangeBox));
+
+
 
     }
 
