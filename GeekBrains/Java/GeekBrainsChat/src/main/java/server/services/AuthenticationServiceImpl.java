@@ -8,7 +8,11 @@ import java.sql.SQLException;
 
 public class AuthenticationServiceImpl implements AuthenticationService {
 
-    UserDAO userDAO = new UserDAO();
+    public void changeNick(String nick, String newNick) throws SQLException {
+        userDAO.changeNick(nick, newNick);
+    }
+
+    private UserDAO userDAO = new UserDAO();
 
     public void start() {
         System.out.println("AuthenticationService was started...");

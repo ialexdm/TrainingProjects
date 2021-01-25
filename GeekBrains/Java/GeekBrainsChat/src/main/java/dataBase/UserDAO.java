@@ -31,6 +31,13 @@ public class UserDAO {
 
     }
 
+    public void changeNick(String nick, String newNick) throws SQLException {
+        ps = DBConn.getInstance().connection().prepareStatement("update users set NICK = ? where NICK = ?;");
+        ps.setString(1, newNick);
+        ps.setString(2, nick);
+        ps.executeUpdate();
+    }
+
     public String getNickByLoginPassword(String login,String password) throws SQLException {
         ps = DBConn.getInstance().connection().prepareStatement("SELECT * FROM users where login = ? and  pass = ?;");
         ps.setString(1, login);

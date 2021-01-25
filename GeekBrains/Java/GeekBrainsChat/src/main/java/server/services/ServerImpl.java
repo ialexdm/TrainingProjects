@@ -7,6 +7,7 @@ import server.interfaces.Server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,26 +56,36 @@ public class ServerImpl implements Server {
         }
     }
 
-    public void executeCommand(ClientHandler from ,String command) {
+    public void executeCommand(ClientHandler from ,String command) throws SQLException {
         String[] commandData = command.split("\\s");
-        if (command.startsWith("/clients")){
+        if (command.startsWith("/clients")) {
             broadcastClientList();
             return;
-        }if (command.startsWith("/exit")){
+        }
+        if (command.startsWith("/exit")) {
             from.setConnection(false);
             System.out.println("Client out of chat");
             return;
-        }
-        else if (commandData[0].equals("/w") && commandData.length > 2){
+        } else if (commandData[0].equals("/w") && commandData.length > 2) {
             StringBuilder message = new StringBuilder();
-            for (int i = 2; i< commandData.length; i++){
+            for (int i = 2; i < commandData.length; i++) {
                 message.append(commandData[i]).append(" ");
                 sendMessageToClient(from, commandData[1], "" + message);
                 return;
             }
+        } else if (commandData[0].equals("/cnick") && commandData.length > 1) {
+            changeNick(from, commandData);
+            return;
+
+            }
+            from.sendMessage("Server: Unknown command");
+            System.out.println("Unknown command");
         }
-        from.sendMessage("Server: Unknown command");
-        System.out.println("Unknown command");
+
+    public synchronized void changeNick(ClientHandler from, String[] commandData) throws SQLException {
+        broadcastMessage("User " + from.getNick() + " change Nick "+ " to " + commandData[1]);
+        authenticationService.changeNick(from.getNick(), commandData[1]);
+        from.setNick(commandData[1]);
     }
 
     @Override

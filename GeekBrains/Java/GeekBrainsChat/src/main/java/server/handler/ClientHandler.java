@@ -14,6 +14,11 @@ public class ClientHandler {
     private final DataInputStream dataInputStream;
     private final DataOutputStream dataOutputStream;
     private boolean connection;
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
     private String nick;
 
     public String getNick(){
@@ -56,7 +61,11 @@ public class ClientHandler {
             }
             if (this.nick == null || this.nick.equals("")){
                 sendMessage("authentication TimeOut(120 sec)");
-                server.executeCommand(this,"/exit");
+                try {
+                    server.executeCommand(this,"/exit");
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 sendMessage("/exit");
                 connection = false;
                 return;
@@ -113,6 +122,8 @@ public class ClientHandler {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
         }
     }
