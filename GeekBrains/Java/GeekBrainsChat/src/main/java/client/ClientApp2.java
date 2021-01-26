@@ -2,7 +2,7 @@ package client;
 
 import client.service.ClientService;
 
-public class ClientApp {
+public class ClientApp2 {
     public static void main(String[] args) {
         new ClientService();
     }
