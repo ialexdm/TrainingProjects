@@ -1,0 +1,39 @@
+...starting Client App...starting Client App...starting Client AppI am: /auth login1 pass1/authOK Alexander
+I am: 1233123123I am: 13123213I am: 131231231I am: 123123...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: 123123123123
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: grfefgrdsgggggggggggggggggggggggggggg
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: 111111111111111111111
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
+...starting Client App
