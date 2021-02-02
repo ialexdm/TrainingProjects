@@ -1,5 +1,6 @@
 package Lesson4;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -73,6 +74,23 @@ public class Lambdas {
 
         5. Имея список строк, напишите метод, который возвращает список всех строк, которые начинаются с буквы «а» (нижний регистр) и имеют ровно 3 буквы.
         public List<String> search(List<String> list)
+
+        */
+        public List<String> search(List<String> list){
+            UnaryOperator<List<String>> startsFromAList = stringList ->{
+                List<String> aList = new ArrayList<>();
+                for (String s:
+                     stringList) {
+                    if (s.startsWith("a")&& s.length() == 3){
+                        aList.add(s);
+                    }
+                }
+                return aList;
+            };
+            return startsFromAList.apply(list);
+        }
+
+    /*
 
         Все должно быть реализовано с помощью лямбда выражений
                 */

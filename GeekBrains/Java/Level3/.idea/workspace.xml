@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612266929628</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tusks 2,3,4 complete">
+      <created>1612267984206</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612267984206</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +119,7 @@
     <MESSAGE value="update Lesson1" />
     <MESSAGE value="update Lesson1&#10;create Lesson4" />
     <MESSAGE value="tusk1 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="tusk1 complete" />
+    <MESSAGE value="tusks 2,3,4 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="tusks 2,3,4 complete" />
   </component>
 </project>
