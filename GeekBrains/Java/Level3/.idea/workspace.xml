@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +22,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/../../.." value="master" />
+        <entry key="$PROJECT_DIR$/../../.." value="69680f1f52fe3bfc02e851339ec5d7dec6e20bee" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="ProjectId" id="1nv32CYTtWYkw6gCfLqeAdxNyjj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,6 +61,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Lambdas" />
+        <item itemvalue="Application.Lambdas" />
+        <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
       </list>
     </recent_temporary>
