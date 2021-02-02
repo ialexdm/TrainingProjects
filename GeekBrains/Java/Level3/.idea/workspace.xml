@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="" />
+    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson4/Lambdas.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="1nv32CYTtWYkw6gCfLqeAdxNyjj" />
@@ -66,7 +80,28 @@
       <option name="project" value="LOCAL" />
       <updated>1612257158143</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update Lesson1&#10;create Lesson4">
+      <created>1612257283398</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612257283398</updated>
+    </task>
+    <task id="LOCAL-00003" summary="tusk1 complete">
+      <created>1612266929628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612266929628</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tusks 2,3,4 complete">
+      <created>1612267984206</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612267984206</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +117,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update Lesson1" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Lesson1" />
+    <MESSAGE value="update Lesson1&#10;create Lesson4" />
+    <MESSAGE value="tusk1 complete" />
+    <MESSAGE value="tusks 2,3,4 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="tusks 2,3,4 complete" />
   </component>
 </project>
