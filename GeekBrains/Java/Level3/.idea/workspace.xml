@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson5/Abc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson5/Abc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson5/race/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson5/race/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson5/race/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson5/race/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson5/race/Tunnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson5/race/Tunnel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Lesson5.race" />
       <recent name="Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Abc">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="Abc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lesson5.Abc" />
       <module name="Level3" />
@@ -81,10 +84,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lesson5.race.MainClass" />
+      <module name="Level3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lesson5.race.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.Abc" />
-        <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
@@ -149,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612377086649</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="tusk1 complete">
+      <created>1612378820523</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612378820524</updated>
+    </task>
+    <task id="LOCAL-00009" summary="copy race app code">
+      <created>1612379079480</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612379079480</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,11 +197,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update Lesson1" />
     <MESSAGE value="update Lesson1&#10;create Lesson4" />
-    <MESSAGE value="tusk1 complete" />
     <MESSAGE value="tusks 2,3,4 complete" />
     <MESSAGE value="create alterantive client apps" />
     <MESSAGE value="update workspace" />
     <MESSAGE value="create Lesson5&#10;create Abc Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Lesson5&#10;create Abc Class" />
+    <MESSAGE value="tusk1 complete" />
+    <MESSAGE value="copy race app code" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy race app code" />
   </component>
 </project>
