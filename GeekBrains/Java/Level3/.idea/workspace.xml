@@ -105,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612267984206</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create alterantive client apps">
+      <created>1612269503797</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612269503797</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +131,7 @@
     <MESSAGE value="update Lesson1&#10;create Lesson4" />
     <MESSAGE value="tusk1 complete" />
     <MESSAGE value="tusks 2,3,4 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="tusks 2,3,4 complete" />
+    <MESSAGE value="create alterantive client apps" />
+    <option name="LAST_COMMIT_MESSAGE" value="create alterantive client apps" />
   </component>
 </project>
