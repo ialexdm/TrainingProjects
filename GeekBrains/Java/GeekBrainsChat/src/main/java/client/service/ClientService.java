@@ -106,7 +106,6 @@ public class ClientService extends ChatWindow {
         for (int i = 0; i < logs.size(); i++) {
             super.chatArea.append(logs.get(i)+"\n");
         }
-        System.out.println("Something meet wrong");
 
     }
 

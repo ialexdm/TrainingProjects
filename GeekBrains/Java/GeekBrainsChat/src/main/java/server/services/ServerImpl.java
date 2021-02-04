@@ -70,9 +70,9 @@ public class ServerImpl implements Server {
             StringBuilder message = new StringBuilder();
             for (int i = 2; i < commandData.length; i++) {
                 message.append(commandData[i]).append(" ");
-                sendMessageToClient(from, commandData[1], "" + message);
-                return;
             }
+            sendMessageToClient(from, commandData[1], "" + message);
+            return;
         } else if (commandData[0].equals("/cnick") && commandData.length > 1) {
             changeNick(from, commandData);
             return;
@@ -96,7 +96,7 @@ public class ServerImpl implements Server {
                 from.sendMessage("[WHISPER] from you to " + c.getNick() + ": " + message );
                 return;
             }
-        }
+        }from.sendMessage("Server: invalid nick");
     }
 
     @Override

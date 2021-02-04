@@ -37,3 +37,89 @@ I am: 111111111111111111111
 ...starting Client App
 ...starting Client App
 ...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: 13123123
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+Annet join to chat
+
+I am: privet
+Alexander: privet
+
+I am: hi
+Annet: hi
+
+I am: /w Alexander kak ti
+[WHISPER] from you to Alexander: kak 
+
+[WHISPER] from Annet to you: kak 
+
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: 13123123
+...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+Annet join to chat
+
+I am: privet
+Alexander: privet
+
+I am: privet
+Annet: privet
+
+I am: /w Annet kak ty
+[WHISPER] from Alexander to you: kak 
+
+[WHISPER] from you to Annet: kak 
+
+I am: /w Alexander kak ti
+[WHISPER] from Annet to you: kak 
+
+[WHISPER] from you to Alexander: kak 
+
+I am: /w Annet kak kak kak kak ti
+[WHISPER] from Alexander to you: kak 
+
+[WHISPER] from you to Annet: kak 
+
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+Annet join to chat
+
+I am: /w nick kaka kaka kak ti
+I am: /w Annet kak kaka kak ty
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+Annet join to chat
+
+I am: /w Annet kak kak kak ty
+[WHISPER] from Alexander to you: kak kak kak ty 
+
+[WHISPER] from you to Annet: kak kak kak ty 
+
