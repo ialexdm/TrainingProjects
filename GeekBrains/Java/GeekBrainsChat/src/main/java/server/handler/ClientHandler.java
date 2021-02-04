@@ -7,6 +7,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ClientHandler {
     private final Socket socket;
@@ -20,7 +22,7 @@ public class ClientHandler {
     }
 
     private String nick;
-
+    public ExecutorService executorService;
     public String getNick(){
         return nick;
     }
@@ -31,13 +33,14 @@ public class ClientHandler {
 
 
         try {
+            this.executorService = Executors.newCachedThreadPool();
             this.server = server;
             this.socket = socket;
             this.dataInputStream = new DataInputStream(socket.getInputStream());
             this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
             this.nick = "";
             connection = true;
-            new Thread(() -> {
+            executorService.execute(() -> {
                     try {
                         authentication();
                         readMessage();
@@ -46,14 +49,14 @@ public class ClientHandler {
                     }finally {
                         closeConnection();
                     }
-            }).start();
+            });
 
         }catch (IOException e){
             throw new RuntimeException("Troubles with create ClientHandler");
         }
     }
     private void authentication() throws IOException {
-        new Thread(()-> {
+        executorService.execute(()-> {
             try {
                 Thread.sleep(120000);
             } catch (InterruptedException e) {
@@ -70,7 +73,7 @@ public class ClientHandler {
                 connection = false;
                 return;
             }
-        }).start();
+        });
         while (connection){
                 String str = null;
                 str = dataInputStream.readUTF();
