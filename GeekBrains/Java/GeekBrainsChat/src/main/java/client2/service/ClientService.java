@@ -1,4 +1,4 @@
-package client.service;
+package client2.service;
 
 import client.window.ChatWindow;
 
