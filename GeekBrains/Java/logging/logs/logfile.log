@@ -1,0 +1,7 @@
+WARN  2021-02-08 19:44:15 [main] TestLogger (TestLogger.java:13) - Warning
+java.lang.ArrayIndexOutOfBoundsException: 7
+	at TestLogger.main(TestLogger.java:11) [classes/:?]
+WARN  2021-02-08 19:49:17 [main] TestLogger (TestLogger.java:14) - java.lang.ArrayIndexOutOfBoundsException: 7
+INFO  2021-02-08 19:49:17 [main] TestLogger (TestLogger.java:16) - Stop
+WARN  2021-02-08 20:04:33 [main] TestLogger (TestLogger.java:14) - java.lang.ArrayIndexOutOfBoundsException: 7
+INFO  2021-02-08 20:04:33 [main] TestLogger (TestLogger.java:16) - Stop
