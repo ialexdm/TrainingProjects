@@ -1,0 +1,11 @@
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+authentication TimeOut(120 sec)
+
+Close connection. You out of chat
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+...starting Client App
