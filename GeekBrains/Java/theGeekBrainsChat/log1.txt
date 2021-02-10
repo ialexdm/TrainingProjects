@@ -1,0 +1,21 @@
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+I am: /w Alexander asdasd asfdasdfafds
+[WHISPER] from you to Alexander: asdasd asfdasdfafds 
+
+Alexander: csadasd
+
+Alexander: asdasdad
+
+User Alexander change Nick  to Alex
+
+Alex: hi
+
+I am: /nick Alex priffki
+Server: Unknown command
+
+I am: /w Alex priffki
+[WHISPER] from you to Alex: priffki 
+

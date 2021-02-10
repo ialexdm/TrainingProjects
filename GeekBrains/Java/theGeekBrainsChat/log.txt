@@ -1,0 +1,57 @@
+...starting Client App
+I am: /auth login1 pass1
+Close connection. You out of chat
+
+...starting Client App
+I am: /auth login1 pass1
+Close connection. You out of chat
+
+...starting Client App
+I am: /auth login1 pass1
+Close connection. You out of chat
+
+...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+Close connection. You out of chat
+
+...starting Client App
+I am: /auth login2 pass2
+Close connection. You out of chat
+
+...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+I am: /auth login2 pass2
+/authOK Annet
+
+Annet join to chat
+
+I am: /w Annet privet kak dela
+[WHISPER] from you to Annet: privet kak dela 
+
+[WHISPER] from Alexander to you: privet kak dela 
+
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alexander
+
+Annet join to chat
+
+[WHISPER] from Annet to you: asdasd asfdasdfafds 
+
+I am: csadasd
+I am: asdasdad
+I am: /cnick Alex
+User Alexander change Nick  to Alex
+
+I am: /hi
+Server: Unknown command
+
+I am: hi
+[WHISPER] from Annet to you: priffki 
+
+...starting Client App
