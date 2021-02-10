@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="" />
+    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClassForTestingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson6/ClassForTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson6/ClassForTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Lesson5/race/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Lesson5/race/MainClass.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +50,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/Lesson1" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -52,7 +60,7 @@
       <recent name="Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainClass">
+  <component name="RunManager" selected="JUnit.ClassForTestingTest">
     <configuration name="Abc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lesson5.Abc" />
       <module name="Level3" />
@@ -92,11 +100,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClassForTestingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Level3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClassForTestingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClassForTestingTest" />
         <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.Abc" />
-        <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
       </list>
@@ -181,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612381170238</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create Lesson6">
+      <created>1612981683770</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612981683770</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add junit jupiter in pom.xml">
+      <created>1612981759125</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612981759125</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +237,8 @@
     <MESSAGE value="tusk1 complete" />
     <MESSAGE value="copy race app code" />
     <MESSAGE value="edit race app&#10;tusk2 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit race app&#10;tusk2 complete" />
+    <MESSAGE value="create Lesson6" />
+    <MESSAGE value="add junit jupiter in pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add junit jupiter in pom.xml" />
   </component>
 </project>
