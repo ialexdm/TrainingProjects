@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClassForTestingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lesson6/ClassForTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson6/ClassForTesting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Lesson5/race/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Lesson5/race/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClassForTestingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClassForTestingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ClassForTestingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ClassForTestingTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612981759125</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="complete tusk1">
+      <created>1612987508155</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612987508155</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +246,7 @@
     <MESSAGE value="edit race app&#10;tusk2 complete" />
     <MESSAGE value="create Lesson6" />
     <MESSAGE value="add junit jupiter in pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="add junit jupiter in pom.xml" />
+    <MESSAGE value="complete tusk1" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete tusk1" />
   </component>
 </project>

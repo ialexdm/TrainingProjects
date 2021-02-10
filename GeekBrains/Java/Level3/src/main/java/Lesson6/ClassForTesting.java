@@ -40,4 +40,13 @@ public class ClassForTesting {
     //  2. Написать метод, который проверяет состав массива из чисел 1 и 4.
     //  Если в нем нет хоть одной четверки или единицы, то метод вернет false;
     //  Написать набор тестов для этого метода (по 3-4 варианта входных данных).
+    public boolean hasOneAndFour(Integer[] numbers){
+        List<Integer> numberList = new ArrayList<>();
+        numberList = Arrays.asList(numbers);
+        if (numberList.contains(1) && numberList.contains(4)){
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -1,14 +1,11 @@
 import Lesson6.ClassForTesting;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.*;
 
 public class ClassForTestingTest {
 
     public  ClassForTesting classForTesting;
     public Integer[] fourIsNotFound = {1,2,3};
+    public Integer[] oneIsNotFound = {4,2,3};
     public Integer[] fourIsNotOnlyOne ={1,2,4,2,5,4,6,7,8,9};
     public Integer[] actual = {6,7,8,9};
     public Integer[] fourIsLast = {1,2,3,5,6,7,8,9,4};
@@ -17,7 +14,6 @@ public class ClassForTestingTest {
     void init(){
         classForTesting = new ClassForTesting();
     }
-
     @Test
     void getNumbersAfterLastFour(){
         Assertions.assertNotNull(classForTesting);
@@ -37,6 +33,22 @@ public class ClassForTestingTest {
         Assertions.assertArrayEquals(classForTesting.getNumbersAfterLastFour(fourIsNotOnlyOne), actual);
         //4
         Assertions.assertArrayEquals(classForTesting.getNumbersAfterLastFour(fourIsLast), empty);
+    }
+    @Test
+    void hasOneAndFour(){
+        Assertions.assertNotNull(classForTesting);
+        Assertions.assertNotNull(fourIsNotFound);
+        Assertions.assertNotNull(oneIsNotFound);
+        Assertions.assertNotNull(actual);
+        Assertions.assertNotNull(fourIsLast);
+        Assertions.assertNotNull(empty);
+
+        Assertions.assertFalse(classForTesting.hasOneAndFour(fourIsNotFound));
+        Assertions.assertFalse(classForTesting.hasOneAndFour(oneIsNotFound));
+        Assertions.assertFalse(classForTesting.hasOneAndFour(actual));
+        Assertions.assertTrue(classForTesting.hasOneAndFour(fourIsLast));
+        Assertions.assertFalse(classForTesting.hasOneAndFour(empty));
+
 
     }
 
