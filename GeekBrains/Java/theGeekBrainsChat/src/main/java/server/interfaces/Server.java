@@ -1,11 +1,13 @@
 package server.interfaces;
 
+import org.apache.logging.log4j.Logger;
 import server.handler.ClientHandler;
 
 import java.sql.SQLException;
 
 public interface Server {
     int PORT = 8189;
+    Logger LOGGER = null;
 
     boolean isNickBusy(String nick);
 

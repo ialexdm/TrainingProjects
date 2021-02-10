@@ -19,3 +19,20 @@ Server: Unknown command
 I am: /w Alex priffki
 [WHISPER] from you to Alex: priffki 
 
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+I am: /auth login2 pass2
+/authOK Annet
+
+I am: /w Alex 123 ptifgdsf asdas
+[WHISPER] from you to Alex: 123 ptifgdsf asdas 
+
+User Alex change Nick  to Anna
+
+User Anna change Nick  to Alexander
+
+ out from chat
+
+ out from chat
+

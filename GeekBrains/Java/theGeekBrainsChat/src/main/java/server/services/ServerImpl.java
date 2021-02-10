@@ -1,8 +1,11 @@
 package server.services;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import server.handler.ClientHandler;
 import server.interfaces.AuthenticationService;
 import server.interfaces.Server;
+
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -11,10 +14,13 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class ServerImpl implements Server {
+
 
     private List<ClientHandler> clients;
     private AuthenticationService authenticationService;
+    public static final Logger LOGGER = LogManager.getLogger(ServerImpl.class);
 
     public ServerImpl(){
         try {
@@ -23,13 +29,14 @@ public class ServerImpl implements Server {
             authenticationService.start();
             clients = new LinkedList<>();
             while (true){
-                System.out.println("Wait join clients");
+                LOGGER.info("Wait join clients");
                 Socket socket = serverSocket.accept();
-                System.out.println("Client join");
+                LOGGER.info("Client join");
                 new ClientHandler(this, socket);
             }
         }catch (IOException e){
-            System.out.println("Troubles in server");
+
+            LOGGER.error("Troubles in server");
         }
         finally {
             if (authenticationService != null){
@@ -49,6 +56,7 @@ public class ServerImpl implements Server {
     }
 
     public synchronized void broadcastMessage(String message) {
+        LOGGER.info("From " + message);
         for (ClientHandler c : clients){
             if (!message.startsWith(c.getNick()) && !message.startsWith("/")){
                 c.sendMessage(message);
@@ -57,6 +65,7 @@ public class ServerImpl implements Server {
     }
 
     public void executeCommand(ClientHandler from ,String command) throws SQLException {
+        LOGGER.info("command from " + from.getNick() + " " + command );
         String[] commandData = command.split("\\s");
         if (command.startsWith("/clients")) {
             broadcastClientList();
@@ -64,7 +73,7 @@ public class ServerImpl implements Server {
         }
         if (command.startsWith("/exit")) {
             from.setConnection(false);
-            System.out.println("Client out of chat");
+            LOGGER.info("Client out of chat");
             return;
         } else if (commandData[0].equals("/w") && commandData.length > 2) {
             StringBuilder message = new StringBuilder();
@@ -79,11 +88,12 @@ public class ServerImpl implements Server {
 
             }
             from.sendMessage("Server: Unknown command");
-            System.out.println("Unknown command");
+            LOGGER.warn("Unknown command from " + from.getNick());
         }
 
     public synchronized void changeNick(ClientHandler from, String[] commandData) throws SQLException {
         broadcastMessage("User " + from.getNick() + " change Nick "+ " to " + commandData[1]);
+        LOGGER.info("User " + from.getNick() + " change Nick "+ " to " + commandData[1]);
         authenticationService.changeNick(from.getNick(), commandData[1]);
         from.setNick(commandData[1]);
     }
@@ -94,9 +104,11 @@ public class ServerImpl implements Server {
             if (c.getNick().equals(to)){
                 c.sendMessage("[WHISPER] from " + from.getNick() + " to you: " + message);
                 from.sendMessage("[WHISPER] from you to " + c.getNick() + ": " + message );
+                LOGGER.info("Sending whisper message from " + from.getNick() + " to " + to);
                 return;
             }
         }from.sendMessage("Server: invalid nick");
+        LOGGER.warn("invalid nick");
     }
 
     @Override
@@ -105,6 +117,7 @@ public class ServerImpl implements Server {
         for (ClientHandler c : clients){
             clientsList.append(c.getNick() + " ");
         }
+        LOGGER.info("broadcast client list...");
         broadcastMessage(clientsList.toString());
     }
 //new method is sendMessageToClient

@@ -55,3 +55,65 @@ I am: hi
 [WHISPER] from Annet to you: priffki 
 
 ...starting Client App
+...starting Client App
+I am: /auth login1 pass1
+/authOK Alex
+
+Close connection. You out of chat
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+I am: /auth login1 pass1
+/authOK Alex
+
+Annet join to chat
+
+[WHISPER] from Annet to you: 123 ptifgdsf asdas 
+
+I am: /cnick Anna
+User Alex change Nick  to Anna
+
+I am: /cnick Alexander
+User Anna change Nick  to Alexander
+
+I am: /clients
+I am: /weweae
+Server: Unknown command
+
+ out from chat
+
+ out from chat
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+I am: /auth login1 pass1
+/authOK Alexander
+
+I am: /auth login3 pass3
+I am: 1
+I am: 2
+I am: 3
+I am: 4
+I am: /sadasdad
+Server: Unknown command
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+I am: /auth login1 pass1
+/authOK Alexander
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+...starting Client App
+Please, authenticate on Server. Send message in "/auth login password" format.
+
+I am: /auth login1 pass1
+/authOK Alexander
+

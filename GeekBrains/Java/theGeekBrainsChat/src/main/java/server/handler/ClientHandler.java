@@ -1,6 +1,9 @@
 package server.handler;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import server.interfaces.Server;
+import server.services.ServerImpl;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,6 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ClientHandler {
+    public static final Logger LOGGER = LogManager.getLogger(ClientHandler.class);
     private final Socket socket;
     private final Server server;
     private final DataInputStream dataInputStream;
@@ -45,29 +49,33 @@ public class ClientHandler {
                         authentication();
                         readMessage();
                     }catch (IOException e) {
-                        e.printStackTrace();
+                        LOGGER.error(e.getStackTrace());
                     }finally {
                         closeConnection();
                     }
             });
 
         }catch (IOException e){
+            LOGGER.error("Troubles with create ClientHandler");
             throw new RuntimeException("Troubles with create ClientHandler");
         }
     }
     private void authentication() throws IOException {
         executorService.execute(()-> {
             try {
+                LOGGER.info("Client start authentication");
+                sendMessage("Please, authenticate on Server. Send message in \"/auth login password\" format.");
                 Thread.sleep(120000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                LOGGER.error(e.getStackTrace());
             }
             if (this.nick == null || this.nick.equals("")){
                 sendMessage("authentication TimeOut(120 sec)");
+                LOGGER.warn("authentication TimeOut(120 sec)");
                 try {
                     server.executeCommand(this,"/exit");
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                    LOGGER.error(throwables.getStackTrace());
                 }
                 sendMessage("/exit");
                 connection = false;
@@ -78,16 +86,14 @@ public class ClientHandler {
                 String str = null;
                 str = dataInputStream.readUTF();
                 if (str.startsWith("/auth") && connection){
+                    LOGGER.info(str);
                     String[] dataArray = str.split("\\s");
                     String nick = null;
-                    try {
-                        nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
-                    } catch (SQLException t) {
-                        t.printStackTrace();
-                    }
+                    nick = server.getAuthenticationService().getNick(dataArray[1],dataArray[2]);
                     if (nick != null){
                         if (!server.isNickBusy(nick)){
                             sendMessage("/authOK " + nick);
+                            LOGGER.info("authentication OK");
                             this.nick = nick;
                             server.broadcastMessage(this.nick + " join to chat");
                             server.subscribe(this);
@@ -96,6 +102,7 @@ public class ClientHandler {
                             sendMessage("Nick is busy");
                         }
                     }else {
+                        LOGGER.warn("Incorrect login or password");
                         sendMessage("Incorrect login or password");
                     }
                 }
@@ -106,14 +113,13 @@ public class ClientHandler {
         try{
             dataOutputStream.writeUTF(message);
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.error(e.getStackTrace());
         }
     }
     public void readMessage(){
         while (connection){
             try {
                 String clientStr = dataInputStream.readUTF();
-                System.out.println("From " + this.nick + ": " + clientStr);
                 if (clientStr.startsWith("/")){
                     server.executeCommand(this, clientStr);
                 }
@@ -124,15 +130,17 @@ public class ClientHandler {
                     server.broadcastMessage(this.nick + ": " + clientStr);
                 }
             } catch (IOException e) {
-                e.printStackTrace();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                connection = false;
+                LOGGER.warn(this.getNick() + " close connection");
+            } catch (SQLException trowables) {
+                LOGGER.error(trowables.getStackTrace());
             }
         }
     }
     public void closeConnection(){
         try {
             sendMessage("/exit");
+            LOGGER.info(this.nick + " out from chat");
             connection = false;
             server.unsubscribe(this);
             server.broadcastMessage(this.nick + " out from chat");
@@ -141,7 +149,7 @@ public class ClientHandler {
             dataOutputStream.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getStackTrace());
         }
 
     }

@@ -1,5 +1,9 @@
 package dataBase;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import server.services.AuthenticationServiceImpl;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,6 +16,7 @@ public class DBConn {//Singleton
     private Connection conn;
 
     private DBConn() throws SQLException {
+
         ResourceBundle rb = ResourceBundle.getBundle("db");
         String host = rb.getString("host");
         String port = rb.getString("port");
@@ -24,11 +29,12 @@ public class DBConn {//Singleton
     }
 
     public static DBConn getInstance(){
+        final Logger LOGGER = LogManager.getLogger(AuthenticationServiceImpl.class);
         if (instance == null){
             try {
                 instance = new DBConn();
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                LOGGER.error(throwables.getStackTrace());
             }
         }
         return instance;
