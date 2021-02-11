@@ -2,9 +2,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +15,19 @@ public class Data {
     private List<String> docNumberVersionWhatsWrong;
     private int count;
     private int rowNum;
-    public Data(){
+    BufferedReader reader;
+    String pathToTable;
+    public Data() throws IOException {
+        try {
+            reader = new BufferedReader(new FileReader("src/main/resources/path2.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            pathToTable = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }reader.close();
         count=0;
         rowNum=0;
         packageID = new ArrayList<>();
@@ -51,7 +61,7 @@ public class Data {
         for (int i = 0 ; i < count; i++) {
             createSheetHeader(sheet, ++rowNum);
         }
-        try (FileOutputStream out = new FileOutputStream(new File("src/main/resources/LCI2.xls"))) {
+        try (FileOutputStream out = new FileOutputStream(new File(pathToTable))) {
             workbook.write(out);
         } catch (IOException e) {
             e.printStackTrace();

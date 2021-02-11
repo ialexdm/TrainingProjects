@@ -29,6 +29,8 @@ public class Table {
             workbook = new HSSFWorkbook ((new POIFSFileSystem(new File(pathToTable))));
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            reader.close();
         }
         HSSFSheet sheetLCI = workbook.getSheetAt(1);
         HSSFSheet pallets = workbook.getSheetAt(0);
