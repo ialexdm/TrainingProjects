@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612989073892</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update workspace.iml">
+      <created>1613056557681</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1613056557681</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +265,7 @@
     <MESSAGE value="complete tusk1" />
     <MESSAGE value="complete tusk2" />
     <MESSAGE value="complete lesson6" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete lesson6" />
+    <MESSAGE value="update workspace.iml" />
+    <option name="LAST_COMMIT_MESSAGE" value="update workspace.iml" />
   </component>
 </project>
