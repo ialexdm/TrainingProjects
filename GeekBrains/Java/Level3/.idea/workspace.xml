@@ -221,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612988324182</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="complete lesson6">
+      <created>1612989073892</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1612989073892</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +257,7 @@
     <MESSAGE value="add junit jupiter in pom.xml" />
     <MESSAGE value="complete tusk1" />
     <MESSAGE value="complete tusk2" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete tusk2" />
+    <MESSAGE value="complete lesson6" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete lesson6" />
   </component>
 </project>
