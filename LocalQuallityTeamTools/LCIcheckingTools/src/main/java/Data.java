@@ -7,76 +7,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
-    private List<String> packageID;
-    private List<String> article;
-    private List<String> supplier;
-    private List<String> division;
-    private List<String> status;
-    private List<String> docNumberVersionWhatsWrong;
-    private int count;
-    private int rowNum;
-    BufferedReader reader;
+    public static List<Data> dataList = new ArrayList<>();
+    private String packageID;
+    private String article;
+    private String supplier;
+    private String division;
+    private String status;
+    private String docNumberVersionWhatsWrong;
+    private static int count;
     String pathToTable;
-    public Data() throws IOException {
-        try {
-            reader = new BufferedReader(new FileReader("src/main/resources/path2.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            pathToTable = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }reader.close();
-        count=0;
-        rowNum=0;
-        packageID = new ArrayList<>();
-        article = new ArrayList<>();
-        supplier = new ArrayList<>();
-        division = new ArrayList<>();
-        status = new ArrayList<>();
-        docNumberVersionWhatsWrong = new ArrayList<>();
-    }
-
-    public void addAll(String article, String supplier, String division, String packageID, String status, String docNumber, String docVersion, String whatsWrong){
+    public Data(String article, String supplier,String packageID, String division, String status, String docNumber, String docVersion, String whatsWrong) throws IOException {
         count++;
-        this.article.add(article);
-        this.supplier.add(supplier);
-        this.division.add(division);
-        this.packageID.add(packageID);
-        this.status.add(status);
-        this.docNumberVersionWhatsWrong.add(docNumber + "-" + docVersion + " = " + whatsWrong);
-        System.out.println(packageID + " " + article + " " + supplier + " " + division + " " + status + " " + docNumber + "-" + docVersion + " = " + whatsWrong);
-    }
-    public void writeAll(HSSFWorkbook workbook){
-        workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet("result");
-        Row row = sheet.createRow(rowNum);
-        row.createCell(0).setCellValue("packageID");
-        row.createCell(1).setCellValue("article");
-        row.createCell(2).setCellValue("supplier");
-        row.createCell(3).setCellValue("division");
-        row.createCell(4).setCellValue("status");
-        row.createCell(5).setCellValue("docNumberDocVersionWhatsWrong");
-        for (int i = 0 ; i < count; i++) {
-            createSheetHeader(sheet, ++rowNum);
-        }
-        try (FileOutputStream out = new FileOutputStream(new File(pathToTable))) {
-            workbook.write(out);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Excel файл успешно создан!");
+        this.article = article;
+        this.supplier = supplier;
+        this.division = division;
+        this.packageID = packageID;
+        this.status = status;
+        this.docNumberVersionWhatsWrong = docNumber + "-" + docVersion + " = " + whatsWrong;
+        dataList.add(this);
+        System.out.println("Строка добавлена");
     }
 
-    private void createSheetHeader(HSSFSheet sheet, int rowNum) {
-        Row row = sheet.createRow(rowNum);
 
-        row.createCell(0).setCellValue(this.packageID.get(rowNum-1));
-        row.createCell(1).setCellValue(this.article.get(rowNum-1));
-        row.createCell(2).setCellValue(this.supplier.get(rowNum-1));
-        row.createCell(3).setCellValue(this.division.get(rowNum-1));
-        row.createCell(4).setCellValue(this.status.get(rowNum-1));
-        row.createCell(5).setCellValue(this.docNumberVersionWhatsWrong.get(rowNum-1));
+    public static List<Data> getDataList() {
+        return dataList;
+    }
+
+    public String getPackageID() {
+        return packageID;
+    }
+
+    public String getArticle() {
+        return article;
+    }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getDocNumberVersionWhatsWrong() {
+        return docNumberVersionWhatsWrong;
     }
 }
