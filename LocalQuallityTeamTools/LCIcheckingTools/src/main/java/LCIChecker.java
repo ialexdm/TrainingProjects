@@ -67,8 +67,9 @@ public class LCIChecker {
         for (int i = 0 ; i < Data.dataList.size(); i++) {
             createSheetHeader(sheet, ++rowNum);
 
+
         }
-        String createPath = Settings.readPath("src/main/resources/LCIResult.txt");
+        String createPath = Settings.readPath("./LCIResult.txt");
         try (FileOutputStream out = new FileOutputStream(new File(createPath));) {
             workbook.write(out);
         } catch (IOException e) {
@@ -101,14 +102,14 @@ public class LCIChecker {
 
             if (isXlsx){
                 try {
-                    pathToTable = Settings.readPath("src/main/resources/LCICheckingReport.txt");
+                    pathToTable = Settings.readPath("./LCICheckingReport.txt");
                     workbook = new XSSFWorkbook(pathToTable);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
            }else {
                try {
-                   pathToTable = Settings.readPath("src/main/resources/ASTRO.txt");
+                   pathToTable = Settings.readPath("./ASTRO.txt");
                    workbook = new HSSFWorkbook ((new POIFSFileSystem(new File(pathToTable))));
                } catch (IOException e) {
                    e.printStackTrace();

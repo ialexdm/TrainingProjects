@@ -15,7 +15,7 @@ public class LCICheckingToolWindow extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         centreWindowOnScreen(600,300);
         JLabel label = new JLabel("Press button for");
-        String[] settingPaths = {"src/main/resources/LCICheckingReport.txt", "src/main/resources/ASTRO.txt","src/main/resources/LCIResult.txt"};
+        String[] settingPaths = {"./LCICheckingReport.txt", "./ASTRO.txt","./LCIResult.txt"};
         String[] paths = new String[3];
         add(label);
 
