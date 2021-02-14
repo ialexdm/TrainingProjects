@@ -1,5 +1,3 @@
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.*;
 
@@ -17,9 +15,9 @@ public class Settings {
         }
         return path;
     }
-    public void setPath(String name) {
-        //TODO
+    public static void setPath(String name, String newPath) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(name))) {
+            writer.write(newPath);
         } catch (IOException e) {
             e.printStackTrace();
         }

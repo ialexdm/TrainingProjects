@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class LCIChecker {
     Table lCIReport;
     Table astro;
-    int count =0;
+    static int count =0;
     int rowNum;
 
 
@@ -25,7 +25,7 @@ public class LCIChecker {
         lCIReport = new Table(12, true);
         astro = new Table(0, false);
         while (astro.iterator.hasNext()){
-            System.out.println(++count);
+            count++;
             astro.row = astro.iterator.next();
             astro.readValues = astro.readValues(4,5,0, 7,10);
             lCIReport.iterator = lCIReport.sheet.iterator();
@@ -74,7 +74,6 @@ public class LCIChecker {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Excel файл успешно создан!");
     }
 
     private void createSheetHeader(HSSFSheet sheet, int rowNum) {
@@ -85,7 +84,6 @@ public class LCIChecker {
         row.createCell(3).setCellValue(Data.dataList.get(rowNum-1).getDivision());//this.division.get(rowNum-1));
         row.createCell(4).setCellValue(Data.dataList.get(rowNum-1).getStatus());//this.status.get(rowNum-1));
         row.createCell(5).setCellValue(Data.dataList.get(rowNum-1).getDocNumberVersionWhatsWrong());//this.docNumberVersionWhatsWrong.get(rowNum-1));
-        System.out.println(Data.dataList.get(rowNum-1).getPackageID());
     }
 
     class Table{

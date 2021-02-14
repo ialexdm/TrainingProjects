@@ -1,7 +1,3 @@
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +10,8 @@ public class Data {
     private String division;
     private String status;
     private String docNumberVersionWhatsWrong;
-    private static int count;
-    String pathToTable;
     public Data(String article, String supplier,String packageID, String division, String status, String docNumber, String docVersion, String whatsWrong) throws IOException {
-        count++;
+
         this.article = article;
         this.supplier = supplier;
         this.division = division;
@@ -25,7 +19,7 @@ public class Data {
         this.status = status;
         this.docNumberVersionWhatsWrong = docNumber + "-" + docVersion + " = " + whatsWrong;
         dataList.add(this);
-        System.out.println("Строка добавлена");
+
     }
 
 
