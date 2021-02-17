@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="" />
+    <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson7/NotOnceBeforeSuitMethodException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson7/NotOnceBeforeSuitMethodException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson7/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson7/TestingClass.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,12 +55,15 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Lesson7" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Lesson5.race" />
       <recent name="Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClassForTestingTest">
+  <component name="RunManager" selected="Application.TestingClass">
     <configuration name="Abc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lesson5.Abc" />
       <module name="Level3" />
@@ -96,6 +103,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestingClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lesson7.TestingClass" />
+      <module name="Level3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lesson7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClassForTestingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Level3" />
       <option name="PACKAGE_NAME" value="" />
@@ -107,10 +127,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestingClass" />
         <item itemvalue="JUnit.ClassForTestingTest" />
         <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.Abc" />
-        <item itemvalue="Application.Lambdas" />
         <item itemvalue="Application.Lambdas" />
       </list>
     </recent_temporary>
@@ -236,7 +256,28 @@
       <option name="project" value="LOCAL" />
       <updated>1613056557681</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Create Lesson7&#10;Create Testing class">
+      <created>1613578672629</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1613578672629</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Create NotOnceBeforeSuitMethodException">
+      <created>1613580563791</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1613580563791</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Create NotOnceAfterSuitMethodException">
+      <created>1613581436235</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1613581436235</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +308,9 @@
     <MESSAGE value="complete tusk2" />
     <MESSAGE value="complete lesson6" />
     <MESSAGE value="update workspace.iml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update workspace.iml" />
+    <MESSAGE value="Create Lesson7&#10;Create Testing class" />
+    <MESSAGE value="Create NotOnceBeforeSuitMethodException" />
+    <MESSAGE value="Create NotOnceAfterSuitMethodException" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create NotOnceAfterSuitMethodException" />
   </component>
 </project>
