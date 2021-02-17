@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c8c80b-98cb-4431-b6cb-c31c926d774f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_02_2021_21_04_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_02_2021_21_04__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson7/NotOnceBeforeSuitMethodException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson7/NotOnceBeforeSuitMethodException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lesson7/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lesson7/TestingClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/../../.." value="master" />
+        <entry key="$PROJECT_DIR$/../../.." value="Java3Lesson7" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613581436235</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="workspace.xml">
+      <created>1613585331461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1613585331461</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +318,7 @@
     <MESSAGE value="Create Lesson7&#10;Create Testing class" />
     <MESSAGE value="Create NotOnceBeforeSuitMethodException" />
     <MESSAGE value="Create NotOnceAfterSuitMethodException" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create NotOnceAfterSuitMethodException" />
+    <MESSAGE value="workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
   </component>
 </project>
