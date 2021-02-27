@@ -36,14 +36,35 @@ public class Main {
         testFindTime.display();
         System.out.println("Find time: " + finish);
 
-
-
         /*
 Задание 6.4
     Реализуйте базовые методы обхода дерева и метода дисплей.
     Реализуйте поиск максимума и минимума.
+    */
+         start();
+         Tree.Node minTest = tree.min();
+         finish();
+         minTest.display();
+         System.out.println("min time: " + finish);
+         start();
+         Tree.Node maxTest = tree.max();
+         finish();
+         maxTest.display();
+         System.out.println("max time: " + finish);
+         System.out.println("________________________________");
+         tree.displayTree();
+
+        /*
 Задание 6.5
     Реализуйте метод удаления узла и выполните оценку времени базовых методов дерева с помощью System.nanoTime().
+    */
+         start();
+         tree.delete(3);
+         finish();
+         System.out.println("delete time: " + finish);
+         tree.displayTree();
+        /*
+
 Задание 6.6
     Реализуйте на основе массива из задания 2.1 алгоритм пирамидальной сортировки с реализацией бинарной пирамиды.
     Выполните оценку алгоритма пирамидальной сортировки с помощью System.nanoTime() и сравните с предыдущими алгоритмами сортировки.
