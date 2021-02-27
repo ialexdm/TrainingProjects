@@ -17,7 +17,7 @@ public class Tree {
         if (root == null){
             root = node;
         }else {
-            Node current = node;
+            Node current = root;
             Node parent;
             while (true){
                 parent = current;
@@ -44,15 +44,13 @@ public class Tree {
             if (key < current.weapon.id){
                 current = current.leftChild;
             }
-            else {
+            else{
                 current = current.rightChild;
             }
             if (current == null){
                 return  null;
             }
         }
-
-
         return current;
     }
 
@@ -75,7 +73,7 @@ public class Tree {
         }
 
         public void display(){
-            System.out.println(MessageFormat.format("Name: %s, Damage: %s.", weapon.name, weapon.damage));
+            System.out.println(String.format("Name: %s, Damage: %s.", weapon.name, weapon.damage));
         }
     }
 }
