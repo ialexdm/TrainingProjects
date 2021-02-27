@@ -4,7 +4,9 @@ import java.text.MessageFormat;
 
 public class Tree {
 
-
+    public Tree(){
+        System.out.println("Создано дерево");
+    }
 
 
     private Node root;
@@ -63,10 +65,14 @@ public class Tree {
     }
 
 
-    private class Node{
+    public class Node{
         public Weapon weapon;
         public Node leftChild;
         public Node rightChild;
+
+        public Node(){
+            System.out.println("Создан узел");
+        }
 
         public void display(){
             System.out.println(MessageFormat.format("Name: %s, Damage: %s.", weapon.name, weapon.damage));
