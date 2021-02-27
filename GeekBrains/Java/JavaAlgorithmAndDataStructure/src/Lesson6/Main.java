@@ -25,9 +25,9 @@ public class Main {
         tree.insert(new Weapon(1,5, "Axe"));
         finish();
         System.out.println("Insert time: " + finish);
-        tree.insert(new Weapon(4,4, "Spear"));
+        tree.insert(new Weapon(2,4, "Spear"));
         tree.insert(new Weapon(3,3, "Sword"));
-        tree.insert(new Weapon(2,2, "Knife"));
+        tree.insert(new Weapon(4,2, "Knife"));
         tree.insert(new Weapon(5,1, "Stick"));
         Tree.Node testFindTime;
         start();
