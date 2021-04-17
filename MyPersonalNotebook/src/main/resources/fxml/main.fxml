@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="center" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="notebook.controllers.MainController">
+    <MenuBar styleClass="menu_bar">
+        <Menu text="File" styleClass="menu">
+            <MenuItem styleClass="menu"  text="1111" />
+            <MenuItem styleClass="menu"  text="exit" onAction="#menuFileItemExit" />
+        </Menu>
+        <Menu text="View" styleClass="menu">
+            <MenuItem styleClass="menu" text="2222" />
+            <MenuItem styleClass="menu" text="3333" />
+        </Menu>
+    </MenuBar>
+    <HBox styleClass="header">
+        <Label alignment="CENTER" maxWidth="Infinity" text="My Personal Notebook" HBox.hgrow="ALWAYS" styleClass="main_heading" />
+        <Button fx:id="signUp" alignment="TOP_RIGHT" onAction="#signUp" text="SignUp" styleClass="sign_up_button" />
+    </HBox>
+    <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+        <TextField fx:id="mainEmail" promptText="e-mail@hostmail.net" styleClass="e_mail_field, field" />
+        <PasswordField fx:id="mainPassword" promptText="password" styleClass="password_field, field" />
+        <Button fx:id="signIn" onAction="#signIn" text="SignIN" styleClass="sign_in_button" />
+    </VBox>
+    <HBox styleClass="footer">
+        <Label alignment="TOP_LEFT" text="2021 All rights reserved" />
+        <HBox alignment="CENTER" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <Hyperlink text="VK" />
+            <Hyperlink text="Instagram" />
+            <Hyperlink text="Telegram" />
+        </HBox>
+        <Hyperlink alignment="TOP_RIGHT" text="Link" />
+    </HBox>
+
+</VBox>
