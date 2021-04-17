@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="center" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="notebook.controllers.NotebookController">
+    <MenuBar styleClass="menu_bar">
+        <Menu styleClass="menu" text="File">
+            <MenuItem styleClass="menu" text="1111" />
+            <MenuItem onAction="#menuFileItemExit" styleClass="menu" text="exit" />
+        </Menu>
+        <Menu styleClass="menu" text="View">
+            <MenuItem styleClass="menu" text="2222" />
+            <MenuItem styleClass="menu" text="3333" />
+        </Menu>
+    </MenuBar>
+    <HBox styleClass="header">
+        <Label alignment="CENTER" maxWidth="Infinity" text="My Personal Notebook" HBox.hgrow="ALWAYS" styleClass="main_heading" />
+    </HBox>
+    <VBox alignment="CENTER" VBox.vgrow="ALWAYS" >
+   <ImageView styleClass="task" fitHeight="150.0" fitWidth="200.0" VBox.vgrow="ALWAYS" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/task.png" />
+      </image>
+   </ImageView>
+    </VBox>
+    <HBox styleClass="header" />
+    <VBox alignment="CENTER" VBox.vgrow="ALWAYS" />
+    <HBox styleClass="footer">
+        <Label alignment="TOP_LEFT" text="2021 All rights reserved" />
+        <HBox alignment="CENTER" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <Hyperlink text="VK" />
+            <Hyperlink text="Instagram" />
+            <Hyperlink text="Telegram" />
+        </HBox>
+        <Hyperlink alignment="TOP_RIGHT" text="Link" />
+    </HBox>
+
+</VBox>
